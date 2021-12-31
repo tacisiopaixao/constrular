@@ -15,7 +15,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import lombok.experimental.Accessors;
+@Accessors(chain = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,6 +39,7 @@ public class Cliente implements Serializable {
 	private String email;
 	
 	@Length(min = 8)
+	@NotBlank(message = "digite um número válido")
 	private String telefone; 
 	
 }

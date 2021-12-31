@@ -21,7 +21,13 @@ public class ClienteService {
 	}
 
 	public Cliente save(Cliente cliente) {
-		return clienteRepository.save(cliente);
+		Optional<Cliente> email = clienteRepository.findByEmail(cliente.getEmail());
+		if(email.isEmpty()) {
+			
+			return clienteRepository.save(cliente);
+		}
+		
+		return null;
 	}
 
 	public void delete(Long id) {
