@@ -39,8 +39,20 @@ public class SegurancaConfig extends WebSecurityConfigurerAdapter {
 		}
 
 		httpSecurity.csrf().disable().authorizeRequests()
-				.antMatchers("/v2/api-docs", "/authenticate", "/swagger-ui.html#/**", "/swagger-resources/**",
-						"/webjars/**", "/user/**", "/login", "/h2-console/**", "/phpmyadmin/**")
+				.antMatchers("/v2/api-docs",
+						"/authenticate", 
+						"/swagger-ui.html#/**", "/swagger-resources/**",
+						"/webjars/**",
+						"/user/**",
+						"/login",
+						"/h2-console/**", 
+						"/phpmyadmin/**",
+						"/politica",
+						"/termos/**",
+						"/termos",
+						"/contato",
+						"/contato/**",
+						"/politica/**")
 				.permitAll()
 
 				.anyRequest().authenticated().and().exceptionHandling()

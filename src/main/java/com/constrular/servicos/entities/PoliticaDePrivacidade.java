@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 
+@Table(name = "tb_politica_de_privacidade")
 @Entity
 public class PoliticaDePrivacidade implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -26,5 +28,5 @@ public class PoliticaDePrivacidade implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(length = 5000)
-	private String description;
+	private String descricao;
 }

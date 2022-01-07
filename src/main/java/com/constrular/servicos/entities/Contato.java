@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -22,6 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 
+@Table(name = "tb_contato")
 @Entity
 public class Contato implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -35,7 +37,7 @@ public class Contato implements Serializable {
 	
 	@Email
 	@NotBlank(message = "Não permitido campo em branco!!")
-	private String email;
+	private String emailContato;
 	private LocalDateTime data;
 	
 	@NotBlank(message = "Não permitido campo em branco!!")
